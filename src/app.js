@@ -55,5 +55,5 @@ const jsx = (
     <AppRouter />;
   </Provider>
 );
-
+console.log('test');
 ReactDOM.render(jsx, document.getElementById('root'));
