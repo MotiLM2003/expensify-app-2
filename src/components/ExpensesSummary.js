@@ -11,7 +11,7 @@ export const ExpensesSummary = ({ totalAmount, length }) => {
       'No expense available.'
     ) : (
       <React.Fragment>
-        Viewing {length} {expenseWord} totaling{' '}
+        Viewing {length} {expenseWord} totaling
         {numeral(totalAmount).format('$0,0.00')}
       </React.Fragment>
     );

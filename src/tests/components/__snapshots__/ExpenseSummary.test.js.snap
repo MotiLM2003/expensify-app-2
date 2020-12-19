@@ -8,7 +8,6 @@ exports[`should render multiple expenses 1`] = `
      
     expenses
      totaling
-     
     $2,000.00
   </h1>
 </div>
@@ -22,7 +21,6 @@ exports[`should render single expense 1`] = `
      
     expense
      totaling
-     
     $2,000.00
   </h1>
 </div>
