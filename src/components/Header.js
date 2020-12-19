@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => (
   <div>
-    <h1>Moti</h1>
+    <h1>My App</h1>
     <ul className='nav'>
       <li>
         <NavLink to='/' exact activeClassName='active-link'>
-          Dashboard
+          asdasd
         </NavLink>
       </li>
       <li>
