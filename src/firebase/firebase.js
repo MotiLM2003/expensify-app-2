@@ -1,50 +1,59 @@
 import * as firebase from 'firebase';
-
+import moment from 'moment';
 // Your web app's Firebase configuration
+
+console.log(process.env.FIREBASE_AUTH_DOMAIN);
 const config = {
-  apiKey: 'AIzaSyCO_F_HE9yF3IAscuW1ab18TPE-HdGIW5k',
-  authDomain: 'expensify-71652.firebaseapp.com',
-  databaseURL: 'https://expensify-71652-default-rtdb.firebaseio.com',
-  projectId: 'expensify-71652',
-  storageBucket: 'expensify-71652.appspot.com',
-  messagingSenderId: '202525676729',
-  appId: '1:202525676729:web:63371cc6cb485da9dbb768',
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 firebase.initializeApp(config);
 
 const database = firebase.database();
 
-// database.ref('users').push({
-//   name: 'Eden Elmakies',
-//   age: 10,
-//   isSingle: true,
-//   location: {
-//     city: 'Kiryat Gat',
-//     country: 'Israel',
-//   },
+export { firebase, database };
+
+// database.ref('notes/-MOxEbTwD_xcxbkFAd2d').update({ body: 'buy food' });
+
+// // const expenses = [];
+// // // database.ref('expenses').on('value', (snapshot) => {
+// // //   const expenses = [];
+// // //   snapshot.forEach((expense) => {
+// // //     //   console.log(expense.val());
+// //     expenses.push({
+// //       id: expense.key,
+// //       ...expense.val(),
+// //     });
+// //   });
+// //   console.log(expenses);
+// // });
+
+// database.ref('expenses').on('child_changed', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
 // });
 
-database.ref('users').on('value', (snapshot) => {
-  const list = snapshot.val();
-  console.log(list);
-});
-
-// database.ref('users').set({
-//   name: 'Moti Elmakies',
-//   age: 42,
-//   isSingle: false,
-//   location: {
-//     city: 'Ramat Gan',
-//     country: 'Israel',
-//   },
+// database.ref('expenses/-MOxGRW-rEz5ycC5uY0c').update({
+//   amount: 210,
 // });
 
-// database.ref('users').remove();
+// database.ref('expenses').on('child_added', (snapshot) => {
+//   console.log(snapshot.key, snapshot.val());
+// });
+// // database.ref('expenses').push({
+// //   description: 'Credit Card',
+// //   note: '',
+// //   amount: 4500,
+// //   createdAt: moment(0).add(4, 'days').valueOf(),
+// // });
 
-// database
-//   .ref('users/isSingle')
-//   .remove()
-//   .then(() => {
-//     console.log('removed');
-//   });
+// database.ref('expenses').push({
+//   description: 'Gaming Computer',
+//   note: 'Lots of dough',
+//   amount: 1200000,
+//   createdAt: moment(0).add(25, 'days').valueOf(),
+// });

@@ -1,4 +1,11 @@
-import { addExpense, editExpense, removeExpense } from '../../actions/expenses';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import {
+  StartAddExpense,
+  addExpense,
+  editExpense,
+  removeExpense,
+} from '../../actions/expenses';
 
 // testing Remove expense aciton
 test('should setup remove expense', () => {
