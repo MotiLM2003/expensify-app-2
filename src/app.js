@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/appRouter';
 import configureStore from './store/configureStore';
+import { login, logout } from './actions/auth';
 import { startGetExpenses } from './actions/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -27,10 +28,13 @@ ReactDOM.render(jsx, document.getElementById('root'));
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     if (history.location.pathname === '/') {
+      store.dispatch(login(user.uid));
       history.push('/dashboard');
+      console.log('logged in');
     }
   } else {
     console.log('logged out');
+    store.dispatch(logout());
     history.push('/');
   }
 });
