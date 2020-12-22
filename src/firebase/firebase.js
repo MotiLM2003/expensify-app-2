@@ -1,8 +1,6 @@
 import * as firebase from 'firebase';
-import moment from 'moment';
 // Your web app's Firebase configuration
 
-console.log(process.env.FIREBASE_AUTH_DOMAIN);
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
@@ -16,7 +14,9 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-export { firebase, database };
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+export { firebase, googleAuthProvider, database };
 
 // database.ref('notes/-MOxEbTwD_xcxbkFAd2d').update({ body: 'buy food' });
 

@@ -17,6 +17,10 @@ export default (state = [], action) => {
       });
     }
 
+    case 'GET_EXPENSES': {
+      return [...action.payload];
+    }
+
     default: {
       return state;
     }
