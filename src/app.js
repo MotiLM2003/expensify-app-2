@@ -28,11 +28,14 @@ ReactDOM.render(jsx, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    console.log('test');
     if (history.location.pathname === '/') {
+      ReactDOM.render(jsx, document.getElementById('root'));
       store.dispatch(login(user.uid));
       history.push('/dashboard');
     }
   } else {
+    ReactDOM.render(jsx, document.getElementById('root'));
     store.dispatch(logout());
     history.push('/');
   }

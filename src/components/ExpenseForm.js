@@ -69,7 +69,7 @@ export class ExpenseForm extends React.Component {
     return (
       <React.Fragment>
         {this.state.error && (
-          <p class='message warning mt-2 rad-xs'> {this.state.error}</p>
+          <p className='message warning mt-2 rad-xs'> {this.state.error}</p>
         )}
         <form
           onSubmit={this.onAddExpenseSubmit}

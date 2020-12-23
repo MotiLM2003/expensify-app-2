@@ -4,7 +4,7 @@ import ExpenseListItem from './ExpenseListItem';
 import { startGetExpenses } from './../actions/expenses';
 import { setLoader } from './../actions/loader';
 import { getVisibleExpenses } from '../selectors/expenses';
-
+import Loader from './Loader';
 export const ExpenseList = ({
   expenses,
   getExpenses,
@@ -13,18 +13,24 @@ export const ExpenseList = ({
 }) => {
   useEffect(() => {
     if (expenses.length === 0) {
+      setTimeout(() => {
+        setLoaderData(true);
+      }, 10);
       getExpenses();
+      setTimeout(() => {
+        setLoaderData(false);
+      }, 1000);
     }
   }, [getExpenses]);
 
-  useEffect(() => {
-    //  setLoaderData(false);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <section className='list-layout'>
       {expenses.length === 0 ? (
-        <div class='list-layout__no_result'>No results please try again.</div>
+        <div className='list-layout__no_result'>
+          No results please try again.
+        </div>
       ) : (
         <div className='list-layout__container'>
           <div className='list-layout__header'>
