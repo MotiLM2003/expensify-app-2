@@ -1,0 +1,22 @@
+.expense-form-layout{
+    
+    & h1 {
+        background:$light-gray;
+        height:12rem;
+        width:100%;
+        line-height:5rem;
+        padding:3.2rem;
+
+
+    }
+
+    &__form {
+        display:flex;
+        flex-direction: column;
+        margin-top:3rem;
+    }
+
+    &__form > * {
+        margin-top:2rem;
+    }
+}

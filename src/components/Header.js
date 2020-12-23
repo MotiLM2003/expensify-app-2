@@ -4,36 +4,21 @@ import { NavLink } from 'react-router-dom';
 import { startLogout } from '../actions/auth';
 
 const Header = (props) => {
-  console.log(props.auth);
   return (
-    <div>
-      <h1>My App</h1>
-      <ul className='nav'>
-        <li>
-          <NavLink to='/dashboard' exact activeClassName='active-link'>
-            Dashboard
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/create' activeClassName='active-link'>
-            Create
-          </NavLink>
-        </li>
+    <header className='header-layout'>
+      <NavLink to='/dashboard' exact activeClassName='active-link'>
+        <h1>Expensify</h1>
+      </NavLink>
 
-        <li>
-          <NavLink to='/expense/' activeClassName='active-link'>
-            Expense
-          </NavLink>
-        </li>
-      </ul>
       <button
         onClick={() => {
           props.startLogout();
         }}
+        className='button header-layout__button'
       >
         Log out
       </button>
-    </div>
+    </header>
   );
 };
 

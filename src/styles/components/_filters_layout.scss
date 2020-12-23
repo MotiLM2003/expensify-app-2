@@ -1,0 +1,19 @@
+.filters-layout {
+    height:15rem;
+    display:flex;
+    justify-content: stretch;
+    align-items: center;
+
+    & > * {
+        margin-left:15px;
+    }
+
+    &__input {
+        height:51px
+    }
+    
+    &__select {
+        height:51px
+    }
+
+}

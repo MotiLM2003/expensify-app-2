@@ -67,9 +67,14 @@ export class ExpenseForm extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onAddExpenseSubmit}>
+      <React.Fragment>
+        {this.state.error && (
+          <p class='message warning mt-2 rad-xs'> {this.state.error}</p>
+        )}
+        <form
+          onSubmit={this.onAddExpenseSubmit}
+          className='expense-form-layout__form'
+        >
           <input
             type='text'
             placeholder='Description'
@@ -103,11 +108,11 @@ export class ExpenseForm extends React.Component {
             onChange={this.handleEvent}
           ></textarea>
 
-          <button>Add expense</button>
+          <button className='button primary w-250 rad-xs'>Add expense</button>
 
           <div></div>
         </form>
-      </div>
+      </React.Fragment>
     );
   }
 }

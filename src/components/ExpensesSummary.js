@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getVisibleExpenses } from '../selectors/expenses';
 import { getExpensesTotal } from '../selectors/expense-total';
 import numeral from 'numeral';
@@ -16,9 +17,12 @@ export const ExpensesSummary = ({ totalAmount, length }) => {
       </React.Fragment>
     );
   return (
-    <div>
+    <section className='summary-layout'>
       <h1>{summary}</h1>
-    </div>
+      <Link to='/create' className='button primary'>
+        Add Expense
+      </Link>
+    </section>
   );
 };
 

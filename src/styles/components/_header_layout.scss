@@ -1,0 +1,13 @@
+.header-layout { 
+    background:#131A47;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:$l-size;
+
+    &__button {
+      background-color: transparent;
+      color:#fff;
+      min-width: 12rem;;
+    }
+}

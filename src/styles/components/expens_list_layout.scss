@@ -1,0 +1,44 @@
+.list-layout {
+
+    &__no_result {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size:2.6rem;
+        font-weight: bold;
+    }
+    &__container {
+        border:1px solid #ccc;
+        
+    }
+
+    &__header {
+        background-color: $light-gray;
+        display: flex;
+        justify-content: space-between;
+        align-items:  center;
+        padding:2.2rem;
+        font-weight: bold;;
+        font-size:1.6rem;
+    }
+
+    &__item_container{
+         padding:2.2rem;
+    }
+}
+
+.expense-list-item {
+    display: flex;
+    justify-content: space-between;
+   
+    padding: 20px 0;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $light-gray;
+    }
+  & h1 {
+      color:#000;
+      font-size:2rem;
+      
+  }
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/appRouter';
@@ -10,6 +10,7 @@ import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import './firebase/firebase';
 import { firebase } from './firebase/firebase';
+import Loader from './components/Loader';
 
 const store = configureStore();
 
@@ -30,10 +31,8 @@ firebase.auth().onAuthStateChanged((user) => {
     if (history.location.pathname === '/') {
       store.dispatch(login(user.uid));
       history.push('/dashboard');
-      console.log('logged in');
     }
   } else {
-    console.log('logged out');
     store.dispatch(logout());
     history.push('/');
   }
